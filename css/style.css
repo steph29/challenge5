@@ -96,11 +96,85 @@ li {
   height: 2rem;
   border: none;
 }
+
+/* Secod part of the page */
 .container-body {
   grid-area: second-container;
-
   background-color: hsla(257, 7%, 63%, 0.1);
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.6fr 0.6fr;
+  grid-template-areas:
+    "title"
+    "flex";
+  justify-content: center;
+  align-content: center;
 }
+.container-title {
+  grid-area: title;
+  width: 37%;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+}
+
+.flexbox {
+  display: flex;
+  justify-self: center;
+  left: 25%;
+  top: 25%;
+  width: 65%;
+  height: 50%;
+  font-size: 0.7rem;
+  text-justify: auto;
+  border-radius: 9px;
+}
+.flexbox img {
+  position: relative;
+  top: -20px;
+  left: 20px;
+  background-color: hsl(260, 8%, 14%);
+  border-radius: 50px;
+}
+.flexbox-left {
+  position: relative;
+  background-color: #fff;
+  right: 00%;
+  border-radius: 6px;
+  top: -20%;
+}
+.flexbox-center {
+  background-color: #fff;
+  border-radius: 6px;
+}
+.liseret {
+  background-color: hsl(180, 66%, 49%);
+  height: 3%;
+  width: 100px;
+  align-self: center;
+  text-align: center;
+}
+.flexbox-right {
+  position: relative;
+  background-color: #fff;
+  border-radius: 6px;
+  left: 00%;
+  top: 20%;
+}
+.flexbox p,
+.flexbox h3 {
+  padding: 2% 5%;
+  margin: 0%;
+}
+.flexbox h3 {
+  font-size: 1rem;
+}
+.flexbox p {
+  font-size: 0.8rem;
+}
+
+/* Third part of the page */
 .boostLink {
   display: grid;
   grid-area: third-container;
