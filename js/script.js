@@ -11,6 +11,7 @@ send.addEventListener("click", function () {
   } else {
     alert(text);
     console.log(text);
+    console.dir(text);
   }
 });
 send.addEventListener("keyup", function (e) {
@@ -22,4 +23,6 @@ send.addEventListener("keyup", function (e) {
 
 //  turn the value on the magic machine
 
+var url = "https://api-ssl.bitly.com/v4/shorten";
+var key = "f1bba0968e731be357e646c2774937e0dbb40e25";
 // Display the result on screen
