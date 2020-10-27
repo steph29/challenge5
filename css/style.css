@@ -125,7 +125,7 @@ li {
 .text:focus:valid {
   outline: none;
 }
-.url .submit {
+.url #checkURL {
   background-color: hsl(180, 66%, 49%);
   border-radius: 10px;
   color: #fff;

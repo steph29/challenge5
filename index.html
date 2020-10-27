@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" type="image/fav.ico" href="images/favicon.ico" />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap"
       rel="stylesheet"
@@ -52,10 +54,11 @@
                         <img src="./images/illustration-working.svg" alt="image" />
                     </div>
         </div>
+
         <!-- floating text area -->
         <div class="url">
             <input type="textarea" id="textField" placeholder="Shorten a link here ..." class="text"/>
-            <input type="submit" value="Shorten it!" class="submit" id="submit"/>
+            <input onclick="manageResearch()" value="Shorten it!" class="submit" id="checkURL" />
             <div id="result"></div>
         </div>
     </div>
@@ -182,12 +185,15 @@
       </div>
      
       <div class="socialNetworks">
+        <a href="./js/test.html">clique ici</a>
         <img src="./images/icon-facebook.svg" alt="icon-facebook" />
         <img src="./images/icon-twitter.svg" alt="icon-twitter" />
         <img src="./images/icon-pinterest.svg" alt="icon-pinterest" />
         <img src="./images/icon-instagram.svg" alt="icon-instagram" />
       </div>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./js/script.js"></script>
+    
   </body>
 </html>
