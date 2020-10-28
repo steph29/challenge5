@@ -20,73 +20,65 @@ pressEnter.addEventListener("keyup", function (e) {
   }
 });
 
-// Fetch API 
+// Fetch API
 
 var url = "https://api-ssl.bitly.com/v4/shorten";
 const headers = {
-    Authorization: "Bearer f1bba0968e731be357e646c2774937e0dbb40e25",
-    "Content-Type": "application/json",
-  };
+  Authorization: "Bearer f1bba0968e731be357e646c2774937e0dbb40e25",
+  "Content-Type": "application/json",
+};
 const body = JSON.stringify({
-    long_url: "https://dev.bitly.com",
-    domain: "bit.ly",
-    
-  });
-  const init = {
-    method : "POST",
-    headers : headers,
-    body : body,
-   };
+  long_url: "https://dev.bitly.com",
+  domain: "bit.ly",
+});
+const init = {
+  method: "POST",
+  headers: headers,
+  body: body,
+};
 
-function success(){
+function success() {
   console.log("Votre requête va aboutir");
   manageResearch();
 }
-function error(){
-  console.log("Votre requête n'a pas pu aboutir");
+
+function error() {
+   console.log("Votre requête n'a pas pu aboutir");
 }
 
-
-function checkURLButton(){
+function checkURLButton() {
   const checkURL = document.getElementById("checkURL").value;
-  return new Promise((success, error)=>{
-    if(!undefined === checkURL){
+  return new Promise((success, error) => {
+    if (!undefined == checkURL) {
       success();
-    }else{
+    } else {
       error();
     }
-
   });
 }
 
 function manageResearch() {
   fetch(url, init)
     .then((response) => {
-      console.log(response);
       const data = response.json();
-      data.then((dataJson) => {
-        console.log(dataJson);
-      });
-    })
-    .then((data)=>{
-      fillResults(data)
+      data
+        .then((dataJson) => {
+          console.log(dataJson['link']);
+          fillsResult(dataJson['link']);
+        })
+        
     })
 
     .catch((error) => console.log(error));
 }
 
-
-
 // Return the response into the DOM
 
-function fillsResult(data){
-let list = document.getElementById("result");
-list.innerHTML = "";
-if(!undefined === data.Response){
-  data.Response.forEach(function(element) {
+function fillsResult(data) {
+  let list = document.getElementById("result");
+  list.innerHTML = "";
     let li = document.createElement("li");
-    li.appendChild(document.createTextNode(element.properties.label));
+    li.appendChild(document.createTextNode(data));
     list.appendChild(li);
-  });
-}
+    
 }
